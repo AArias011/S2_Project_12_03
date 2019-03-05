@@ -32,12 +32,9 @@ var donationTotal = 0;
 
 //This statement will calculate the donation total
 donors.forEach(calcSum);
-
 var summaryTable = "<table><tr><th>Donors</th><td>" + donors.length + "</td></tr><tr><th>Total donations</th><td>$" + donationTotal.toLocaleString() + "</td></tr> </table>";
 
 //displays the total amount of donations with a thousands separator in the report.
-
-
 document.getElementById("donationSummary").innerHTML = summaryTable;
 
 //shows a list of the donors who contributed $1000 or more to Appalachian House
@@ -49,17 +46,15 @@ majorDonors.sort(donorSortDescending);
 //stores the HTML code for the table of major donors
 var donorTable = "<table><caption>Major Donors</caption><tr><th>Donation</th><th>Donor ID</th><th>Date</th><th>Name</th><th>Address</th><th>Phone</th><th>E-mail</th></tr>";
 
-//
+//this creates the HTML code for each donor row 
 majorDonors.forEach(writeDonorRow);
-
-//
 donorTable += "</table>";
-
-//
 document.getElementById("donorTable").innerHTML = donorTable;
 
 
 
+
+//dont change 
 function calcSum(donorAmt) {
       donationTotal += donorAmt[9];
 }
